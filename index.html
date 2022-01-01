@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>João Pedro - DoWhile2021</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="avatar">
+          <span>
+            <img src="/images/selo.svg" alt="Selo Rocketseat" />
+          </span>
+          <img src="/images/foto-de-perfil.png" alt="Foto de Perfil" />
+        </div>
+        <h1 id="userName">João Pedro</h1>
+        <a href="https://github.com" target="_blank">
+          <img src="/images/Github.svg" alt="Ícone do Github" />
+          @joaopedro_328
+        </a>
+        <p>An instructor focused on helping pople start programming for web</p>
+
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com" target="_blank">
+              <img src="/images/youtube.svg" alt="ícone do YouTube" />
+            </a>
+          </li>
+          <li class="instagram">
+            <a href="https://www.instagram.com/joaopedro_328/" target="_blank">
+              <img src="/images/instagram.svg" alt="ícone do instagram" />
+            </a>
+          </li>
+          <li class="facebook">
+            <a href="https://facebook.com" target="_blank">
+              <img src="/images/facebook.svg" alt="ícone do facebook" />
+            </a>
+          </li>
+          <li class="linkedin">
+            <a href="https://www.linkedin.com/" target="_blank">
+              <img src="/images/twitter.svg" alt="ícone do twitter" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'JP328',
+        youtube: '/channel/UCEUPn1hAeqfNdFPMfT-HO0A',
+        instagram: 'joaopedro_328',
+        facebook: '/joaopedrodamaiamoura.moura/',
+        linkedin: '/in/joão-pedro-da-maia-511242205/'
+      }
+
+      function changeSocialMediaLinks() {
+        /* usando o Id é possivel escrever a seguinte linha de código: 'IdName.comando-que-manipule-a-DOM'
+      Quando fazemos isso o javascript já entende que o "alguma-coisa" é um Id e busca por ele no código.
+
+      document.getElementById('userName').textContent = 'Sonic'
+
+        userName.textContent = 'Josh' 
+        */
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `https://www.${social}.com/${linksSocialMedia[social]}`
+
+          // alert(li.children[0].href)
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
+  </body>
+</html>
