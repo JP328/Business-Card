@@ -12,7 +12,7 @@ Quando fazemos isso o javascript já entende que o "alguma-coisa" é um Id e bus
 
 document.getElementById('userName').textContent = 'Sonic'
 
-  userName.textContent = '`Josh' 
+  userName.textContent = 'Josh' 
   */
   for (let li of socialLinks.children) {
     const social = li.getAttribute('class')
@@ -27,6 +27,11 @@ function getGitHubProfileInfos() {
   const url = `https://api.github.com/users/${linksSocialMedia.github}`
 
   fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      userName.textContent = `${data.name}`
+      bio.textContent = `${data.bio}`
+    })
 }
 
 getGitHubProfileInfos()
