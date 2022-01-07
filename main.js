@@ -29,8 +29,11 @@ function getGitHubProfileInfos() {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      userName.textContent = `${data.name}`
-      bio.textContent = `${data.bio}`
+      userName.textContent = data.name
+      bio.textContent = data.bio
+      userLink.href = data.html_url
+      profilePhoto.src = data.avatar_url
+      userLogin.textContent = data.login
     })
 }
 
